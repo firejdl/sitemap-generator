@@ -115,6 +115,7 @@ module.exports = function SitemapGenerator(uri, opts) {
   });
 
   crawler.on('complete', () => {
+    emitter.emit('beforeDone');
     sitemap.finish();
 
     const sitemaps = sitemap.getPaths();
